@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Django demo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+   <div class="jumbotron text-center">
+  <h1>My First Bootstrap Page</h1>
+  <a href="{% url 'index' %}"class="btn btn-success">Home</a>
+<a href="{% url 'login' %}"class="btn btn-success">login</a>
+<a href="{% url 'registration' %}"class="btn btn-success">Registration</a>
+</div> 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>
+</body>
+</html>

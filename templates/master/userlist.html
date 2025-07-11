@@ -1,0 +1,49 @@
+
+{% extends "Master/header.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+     
+    </div>
+    <div class="col-sm-8">
+      <h2 class="text-light bg-dark p-3 text-center w-100"><b>List of Users</b></h2>
+{% if userdata %}
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in userdata %}
+        <tr>
+          <td>{{ i.name }}</td>
+          <td>{{ i.address }}</td>
+          <td>{{ i.phone_number }}</td>
+          <td>{{ i.email }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+ <div>
+     <h3>No UserList Available</h3>
+ </div>
+{% endif %}
+
+    </div>
+    <div class="col-sm-2">
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
