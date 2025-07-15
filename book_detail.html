@@ -1,22 +1,65 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>{{ book.bookname }} - Details</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Book Details Card</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .book-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 320px;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+  .book-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .book-author {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .book-info {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 6px;
+  }
+
+  .book-info span {
+    font-weight: 600;
+    color: #444;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>{{ book.bookname }}</h1>
-    <img src="{{ book.photo }}" alt="{{ book.bookname }}" class="img-responsive" style="max-height:400px;">
-    <p><strong>book name:</strong> ${{book.bookname}}</p>
-    <p><strong>Price:</strong> ${{ book.price}}</p>
-    <p><strong>Author:</strong> ${{book.author}}</p>
 
-    <p><strong>Description:</strong> {{ book.description }}</p>
-      <!-- assuming you have a description field -->
-    <a href="{% url 'books' %}" class="btn btn-primary">Back to Books</a>
-  </div>
+<div class="book-card">
+  <div class="book-title">The Great Gatsby</div>
+  <img src="{{ book.photo }}" alt="{{ book.bookname }}" class="img-responsive" style="max-height:400px;">
+  <div class="book-author">by F. Scott Fitzgerald</div>
+  <div class="book-info"><span>Published:</span> 1925</div>
+  <div class="book-info"><span>Genre:</span> Fiction</div>
+  <div class="book-info"><span>Pages:</span> 218</div>
+</div>
+
 </body>
 </html>
