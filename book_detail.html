@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ book.bookname }} - Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>{{ book.bookname }}</h1>
+    <img src="{{ book.photo }}" alt="{{ book.bookname }}" class="img-responsive" style="max-height:400px;">
+    <p><strong>book name:</strong> ${{book.bookname}}</p>
+    <p><strong>Price:</strong> ${{ book.price}}</p>
+    <p><strong>Author:</strong> ${{book.author}}</p>
+
+    <p><strong>Description:</strong> {{ book.description }}</p>
+      <!-- assuming you have a description field -->
+    <a href="{% url 'books' %}" class="btn btn-primary">Back to Books</a>
+  </div>
+</body>
+</html>
